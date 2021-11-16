@@ -1,4 +1,4 @@
-# CALCULATOR WS
+# CALCULATOR ByRPC
 ---
 **CalculatorWS** is a REST web service implemented in Java using the framework Spring Boot. 
 It uses RabbitMQ for the communications between two modules that exists in the WS, **Rest** and **Calculator**. The WS supports the following math operations:  
