@@ -15,7 +15,7 @@ import com.rabbitmq.client.QueueingConsumer;
 
 @Component
 public class RPCClient {
-
+	//连接工厂
 	private static ConnectionFactory factory = new ConnectionFactory();	
 	
 	private Connection connection;
@@ -25,10 +25,13 @@ public class RPCClient {
 	private QueueingConsumer consumer;
 
 	public RPCClient() throws Exception {
-		factory.setHost("localhost");
+		factory.setHost("121.89.198.164");
 		connection = factory.newConnection();
 		channel = connection.createChannel();
-		//获取队列名称
+
+
+
+		//客户端创建匿名回调队列 Callback Queue
 		replyQueueName = channel.queueDeclare().getQueue();
 		//创建消费者
 		consumer = new QueueingConsumer(channel);
@@ -45,13 +48,13 @@ public class RPCClient {
 
 	public String call(String message) throws Exception {
 		String response = null;
-		
+		//客户端为RPC请求设置2个属性：replyTo，设置回调队列名字；correlationId，标记request。
 		String corrId = (String) MDC.get("UNIQUE_ID");
 		if ( corrId == null )
 			corrId = UUID.randomUUID().toString();
 		
 		logger.info(String.format("%s --> Requesting : %s", corrId, message));
-		
+		//Message properties,对request进行标记
 		BasicProperties props = new BasicProperties
 				.Builder().correlationId(corrId).replyTo(replyQueueName).build();
 
@@ -64,6 +67,7 @@ public class RPCClient {
 		 * 3、props，消息的属性
 		 * 4、body，消息内容
 		 */
+		//请求被发送到rpc_queue队列中。
 		channel.basicPublish("", requestQueueName, props, message.getBytes("UTF-8"));
 
 		while (true) {

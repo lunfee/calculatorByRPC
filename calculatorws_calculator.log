@@ -1,0 +1,140 @@
+2021-11-16 10:00:39.765  INFO 2924 --- [main] c.c.c.calculator.CalculatorApplication   : Starting CalculatorApplication on LAPTOP-B06TLUR3 with PID 2924 (F:\GitProjects\calculatorws\calculatorws-calculator\target\classes started by lunfee in F:\GitProjects\calculatorws)
+2021-11-16 10:00:39.767  INFO 2924 --- [main] c.c.c.calculator.CalculatorApplication   : No active profile set, falling back to default profiles: default
+2021-11-16 10:00:39.795  INFO 2924 --- [main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4e4aea35: startup date [Tue Nov 16 10:00:39 CST 2021]; root of context hierarchy
+2021-11-16 10:00:40.163  INFO 2924 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration' of type [class org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration$$EnhancerBySpringCGLIB$$3983e3c5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-16 10:00:40.363  INFO 2924 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2021-11-16 10:00:40.368  INFO 2924 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147482648
+2021-11-16 10:00:40.368  INFO 2924 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2021-11-16 10:00:40.373  INFO 2924 --- [main] c.c.c.c.server.CalculatorServer          : Starting RPCServer ...
+2021-11-16 10:01:01.444 ERROR 2924 --- [main] c.c.c.calculator.server.RPCServer        : An error has occurred!
+
+java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method) ~[na:1.8.0_301]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:81) ~[na:1.8.0_301]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476) ~[na:1.8.0_301]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218) ~[na:1.8.0_301]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200) ~[na:1.8.0_301]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:162) ~[na:1.8.0_301]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394) ~[na:1.8.0_301]
+	at java.net.Socket.connect(Socket.java:606) ~[na:1.8.0_301]
+	at com.rabbitmq.client.impl.FrameHandlerFactory.create(FrameHandlerFactory.java:32) ~[amqp-client-3.6.0.jar:na]
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:676) ~[amqp-client-3.6.0.jar:na]
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:722) ~[amqp-client-3.6.0.jar:na]
+	at com.company.calculatorws.calculator.server.RPCServer.start(RPCServer.java:40) ~[classes/:na]
+	at com.company.calculatorws.calculator.server.CalculatorServer.run(CalculatorServer.java:18) [classes/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:806) [spring-boot-1.3.3.RELEASE.jar:1.3.3.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:790) [spring-boot-1.3.3.RELEASE.jar:1.3.3.RELEASE]
+	at org.springframework.boot.SpringApplication.afterRefresh(SpringApplication.java:777) [spring-boot-1.3.3.RELEASE.jar:1.3.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) [spring-boot-1.3.3.RELEASE.jar:1.3.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191) [spring-boot-1.3.3.RELEASE.jar:1.3.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180) [spring-boot-1.3.3.RELEASE.jar:1.3.3.RELEASE]
+	at com.company.calculatorws.calculator.CalculatorApplication.main(CalculatorApplication.java:14) [classes/:na]
+
+2021-11-16 10:01:01.445  INFO 2924 --- [main] c.c.c.calculator.CalculatorApplication   : Started CalculatorApplication in 21.915 seconds (JVM running for 22.716)
+2021-11-16 10:01:01.446  INFO 2924 --- [Thread-1] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@4e4aea35: startup date [Tue Nov 16 10:00:39 CST 2021]; root of context hierarchy
+2021-11-16 10:01:01.447  INFO 2924 --- [Thread-1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2021-11-16 10:01:01.448  INFO 2924 --- [Thread-1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase -2147482648
+2021-11-16 10:01:01.450  INFO 2924 --- [Thread-1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2021-11-16 10:05:47.667  INFO 17364 --- [main] c.c.c.calculator.CalculatorApplication   : Starting CalculatorApplication on LAPTOP-B06TLUR3 with PID 17364 (F:\GitProjects\calculatorws\calculatorws-calculator\target\classes started by lunfee in F:\GitProjects\calculatorws)
+2021-11-16 10:05:47.670  INFO 17364 --- [main] c.c.c.calculator.CalculatorApplication   : No active profile set, falling back to default profiles: default
+2021-11-16 10:05:47.700  INFO 17364 --- [main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4e4aea35: startup date [Tue Nov 16 10:05:47 CST 2021]; root of context hierarchy
+2021-11-16 10:05:48.027  INFO 17364 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration' of type [class org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration$$EnhancerBySpringCGLIB$$3983e3c5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-16 10:05:48.239  INFO 17364 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2021-11-16 10:05:48.244  INFO 17364 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147482648
+2021-11-16 10:05:48.244  INFO 17364 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2021-11-16 10:05:48.249  INFO 17364 --- [main] c.c.c.c.server.CalculatorServer          : Starting RPCServer ...
+2021-11-16 10:06:09.311 ERROR 17364 --- [main] c.c.c.calculator.server.RPCServer        : An error has occurred!
+
+java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method) ~[na:1.8.0_301]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:81) ~[na:1.8.0_301]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476) ~[na:1.8.0_301]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218) ~[na:1.8.0_301]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200) ~[na:1.8.0_301]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:162) ~[na:1.8.0_301]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394) ~[na:1.8.0_301]
+	at java.net.Socket.connect(Socket.java:606) ~[na:1.8.0_301]
+	at com.rabbitmq.client.impl.FrameHandlerFactory.create(FrameHandlerFactory.java:32) ~[amqp-client-3.6.0.jar:na]
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:676) ~[amqp-client-3.6.0.jar:na]
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:722) ~[amqp-client-3.6.0.jar:na]
+	at com.company.calculatorws.calculator.server.RPCServer.start(RPCServer.java:40) ~[classes/:na]
+	at com.company.calculatorws.calculator.server.CalculatorServer.run(CalculatorServer.java:18) [classes/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:806) [spring-boot-1.3.3.RELEASE.jar:1.3.3.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:790) [spring-boot-1.3.3.RELEASE.jar:1.3.3.RELEASE]
+	at org.springframework.boot.SpringApplication.afterRefresh(SpringApplication.java:777) [spring-boot-1.3.3.RELEASE.jar:1.3.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) [spring-boot-1.3.3.RELEASE.jar:1.3.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191) [spring-boot-1.3.3.RELEASE.jar:1.3.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180) [spring-boot-1.3.3.RELEASE.jar:1.3.3.RELEASE]
+	at com.company.calculatorws.calculator.CalculatorApplication.main(CalculatorApplication.java:14) [classes/:na]
+
+2021-11-16 10:06:09.312  INFO 17364 --- [main] c.c.c.calculator.CalculatorApplication   : Started CalculatorApplication in 21.788 seconds (JVM running for 22.338)
+2021-11-16 10:06:09.313  INFO 17364 --- [Thread-1] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@4e4aea35: startup date [Tue Nov 16 10:05:47 CST 2021]; root of context hierarchy
+2021-11-16 10:06:09.314  INFO 17364 --- [Thread-1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2021-11-16 10:06:09.314  INFO 17364 --- [Thread-1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase -2147482648
+2021-11-16 10:06:09.316  INFO 17364 --- [Thread-1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2021-11-16 10:07:24.139  INFO 3744 --- [main] c.c.c.calculator.CalculatorApplication   : Starting CalculatorApplication on LAPTOP-B06TLUR3 with PID 3744 (F:\GitProjects\calculatorws\calculatorws-calculator\target\classes started by lunfee in F:\GitProjects\calculatorws)
+2021-11-16 10:07:24.141  INFO 3744 --- [main] c.c.c.calculator.CalculatorApplication   : No active profile set, falling back to default profiles: default
+2021-11-16 10:07:24.166  INFO 3744 --- [main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4e4aea35: startup date [Tue Nov 16 10:07:24 CST 2021]; root of context hierarchy
+2021-11-16 10:07:24.467  INFO 3744 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration' of type [class org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration$$EnhancerBySpringCGLIB$$3983e3c5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-16 10:07:24.666  INFO 3744 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2021-11-16 10:07:24.671  INFO 3744 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147482648
+2021-11-16 10:07:24.671  INFO 3744 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2021-11-16 10:07:24.676  INFO 3744 --- [main] c.c.c.c.server.CalculatorServer          : Starting RPCServer ...
+2021-11-16 10:07:45.730 ERROR 3744 --- [main] c.c.c.calculator.server.RPCServer        : An error has occurred!
+
+java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method) ~[na:1.8.0_301]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:81) ~[na:1.8.0_301]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476) ~[na:1.8.0_301]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218) ~[na:1.8.0_301]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200) ~[na:1.8.0_301]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:162) ~[na:1.8.0_301]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394) ~[na:1.8.0_301]
+	at java.net.Socket.connect(Socket.java:606) ~[na:1.8.0_301]
+	at com.rabbitmq.client.impl.FrameHandlerFactory.create(FrameHandlerFactory.java:32) ~[amqp-client-3.6.0.jar:na]
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:676) ~[amqp-client-3.6.0.jar:na]
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:722) ~[amqp-client-3.6.0.jar:na]
+	at com.company.calculatorws.calculator.server.RPCServer.start(RPCServer.java:40) ~[classes/:na]
+	at com.company.calculatorws.calculator.server.CalculatorServer.run(CalculatorServer.java:18) [classes/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:806) [spring-boot-1.3.3.RELEASE.jar:1.3.3.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:790) [spring-boot-1.3.3.RELEASE.jar:1.3.3.RELEASE]
+	at org.springframework.boot.SpringApplication.afterRefresh(SpringApplication.java:777) [spring-boot-1.3.3.RELEASE.jar:1.3.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) [spring-boot-1.3.3.RELEASE.jar:1.3.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1191) [spring-boot-1.3.3.RELEASE.jar:1.3.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1180) [spring-boot-1.3.3.RELEASE.jar:1.3.3.RELEASE]
+	at com.company.calculatorws.calculator.CalculatorApplication.main(CalculatorApplication.java:12) [classes/:na]
+
+2021-11-16 10:07:45.731  INFO 3744 --- [main] c.c.c.calculator.CalculatorApplication   : Started CalculatorApplication in 21.749 seconds (JVM running for 22.3)
+2021-11-16 10:07:45.732  INFO 3744 --- [Thread-1] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@4e4aea35: startup date [Tue Nov 16 10:07:24 CST 2021]; root of context hierarchy
+2021-11-16 10:07:45.733  INFO 3744 --- [Thread-1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2021-11-16 10:07:45.733  INFO 3744 --- [Thread-1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase -2147482648
+2021-11-16 10:07:45.735  INFO 3744 --- [Thread-1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2021-11-16 10:08:45.156  INFO 16304 --- [main] c.c.c.calculator.CalculatorApplication   : Starting CalculatorApplication on LAPTOP-B06TLUR3 with PID 16304 (F:\GitProjects\calculatorws\calculatorws-calculator\target\classes started by lunfee in F:\GitProjects\calculatorws)
+2021-11-16 10:08:45.158  INFO 16304 --- [main] c.c.c.calculator.CalculatorApplication   : No active profile set, falling back to default profiles: default
+2021-11-16 10:08:45.182  INFO 16304 --- [main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4e4aea35: startup date [Tue Nov 16 10:08:45 CST 2021]; root of context hierarchy
+2021-11-16 10:08:45.489  INFO 16304 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration' of type [class org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration$$EnhancerBySpringCGLIB$$3983e3c5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-16 10:08:45.708  INFO 16304 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2021-11-16 10:08:45.712  INFO 16304 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147482648
+2021-11-16 10:08:45.712  INFO 16304 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2021-11-16 10:08:45.717  INFO 16304 --- [main] c.c.c.c.server.CalculatorServer          : Starting RPCServer ...
+2021-11-16 10:08:51.338  INFO 16304 --- [Thread-1] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@4e4aea35: startup date [Tue Nov 16 10:08:45 CST 2021]; root of context hierarchy
+2021-11-16 10:08:51.339  INFO 16304 --- [Thread-1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2021-11-16 10:08:51.339  INFO 16304 --- [Thread-1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase -2147482648
+2021-11-16 10:08:51.341  INFO 16304 --- [Thread-1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2021-11-16 10:13:51.185  INFO 18268 --- [main] c.c.c.calculator.CalculatorApplication   : Starting CalculatorApplication on LAPTOP-B06TLUR3 with PID 18268 (F:\GitProjects\calculatorws\calculatorws-calculator\target\classes started by lunfee in F:\GitProjects\calculatorws)
+2021-11-16 10:13:51.187  INFO 18268 --- [main] c.c.c.calculator.CalculatorApplication   : No active profile set, falling back to default profiles: default
+2021-11-16 10:13:51.214  INFO 18268 --- [main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4e4aea35: startup date [Tue Nov 16 10:13:51 CST 2021]; root of context hierarchy
+2021-11-16 10:13:51.537  INFO 18268 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration' of type [class org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration$$EnhancerBySpringCGLIB$$3983e3c5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-16 10:13:51.756  INFO 18268 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2021-11-16 10:13:51.760  INFO 18268 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147482648
+2021-11-16 10:13:51.760  INFO 18268 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2021-11-16 10:13:51.765  INFO 18268 --- [main] c.c.c.c.server.CalculatorServer          : Starting RPCServer ...
+2021-11-16 10:13:52.046  INFO 18268 --- [main] c.c.c.calculator.server.RPCServer        : >>>>> Waiting for requests <<<<<
+2021-11-16 10:14:19.095  INFO 18268 --- [main] c.c.c.calculator.server.RPCServer        : <-- Got from c66e8e4b-c95a-4524-86d6-a478804b50ae : Sum,2,4
+2021-11-16 10:14:19.097  INFO 18268 --- [main] c.c.c.calculator.server.RPCServer        : --> Sending to c66e8e4b-c95a-4524-86d6-a478804b50ae : 6
+2021-11-16 10:14:23.987  INFO 18268 --- [main] c.c.c.calculator.server.RPCServer        : <-- Got from 59facd62-bc79-4636-88f3-bade4eb75ba2 : Sum,2,6
+2021-11-16 10:14:23.987  INFO 18268 --- [main] c.c.c.calculator.server.RPCServer        : --> Sending to 59facd62-bc79-4636-88f3-bade4eb75ba2 : 8
+2021-11-16 10:17:10.200  INFO 18268 --- [Thread-1] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@4e4aea35: startup date [Tue Nov 16 10:13:51 CST 2021]; root of context hierarchy
+2021-11-16 10:17:10.202  INFO 18268 --- [Thread-1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2021-11-16 10:17:10.202  INFO 18268 --- [Thread-1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase -2147482648
+2021-11-16 10:17:10.204  INFO 18268 --- [Thread-1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown

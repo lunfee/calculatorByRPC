@@ -16,8 +16,10 @@ import com.rabbitmq.client.QueueingConsumer;
 public class RPCServer {
 	//定义连接工厂
 	private ConnectionFactory factory = new ConnectionFactory();
-	
+	//定义flag作为服务关闭标志
 	private boolean stop = false;
+	private static final String RPC_QUEUE_NAME = "rpc_queue";
+	private static final Logger logger = LoggerFactory.getLogger(RPCServer.class);
 	
 	@Autowired
 	private MessageHandler messageHandler;
@@ -29,7 +31,7 @@ public class RPCServer {
 		Channel channel = null;
 		try {
 			//设置服务器地址
-			factory.setHost("localhost");
+			factory.setHost("121.89.198.164");
 			//使用默认端口
 			// factory.setPort(5672);
 			// 设置账号信息，用户名、密码、virtualhost
@@ -51,6 +53,7 @@ public class RPCServer {
 			 * 5、arguments 参数，可以设置一个队列的扩展参数，比如：可设置存活时间
 			 */
 			channel.queueDeclare(RPC_QUEUE_NAME, false, false, false, null);
+			//设置每个消费者只同时处理一条消息，在手动ack的情况下生效
 			channel.basicQos(1);
 
 			QueueingConsumer consumer = new QueueingConsumer(channel);
@@ -75,6 +78,7 @@ public class RPCServer {
 				BasicProperties replyProps = new BasicProperties.Builder().correlationId(corrId).build();
 				
 				try {
+					//Client端做的数据处理与反馈
 					String message = new String(delivery.getBody(),"UTF-8");
 					logger.info(String.format("<-- Got from %s : %s", corrId, message));
 					
@@ -111,7 +115,5 @@ public class RPCServer {
 		}
 	}
 	
-	private static final String RPC_QUEUE_NAME = "rpc_queue";
-	
-	private static final Logger logger = LoggerFactory.getLogger(RPCServer.class);
+
 }

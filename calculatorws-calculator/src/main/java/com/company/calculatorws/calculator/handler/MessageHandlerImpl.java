@@ -11,8 +11,12 @@ import com.company.calculatorws.calculator.operation.Operation;
 
 @Component
 public class MessageHandlerImpl implements MessageHandler {
-	
-	public MessageHandlerImpl() {}	
+
+	private static String operPackage = "com.company.calculatorws.calculator.operation";
+
+	private static final Logger logger = LoggerFactory.getLogger(MessageHandlerImpl.class);
+
+	public MessageHandlerImpl() {}
 
 	@Override
 	public String process(String message) {
@@ -20,11 +24,12 @@ public class MessageHandlerImpl implements MessageHandler {
 		
 		try { 
 			String[] arrMessage = message.split(",");		
-	
+			//利用多态性的思想，将具体的操作交给操作接口，引用接口的方法调用实例的方法
+			//操作的获取是反射的思想
 			Operation oper = createObject(arrMessage[0]);
 			BigDecimal a = new BigDecimal(arrMessage[1]);
 			BigDecimal b = new BigDecimal(arrMessage[2]);
-			
+			//返回BigDecimal的String
 			result = oper.calculate(a, b).toString();
 		}
 		catch (ArrayIndexOutOfBoundsException e) {
@@ -54,9 +59,6 @@ public class MessageHandlerImpl implements MessageHandler {
 		Class<?> clazz = Class.forName(operPackage + "." + className);
 		return (Operation) clazz.newInstance();
 	}
-	
-	private static String operPackage = "com.company.calculatorws.calculator.operation";
-	
-	private static final Logger logger = LoggerFactory.getLogger(MessageHandlerImpl.class);
+
 
 }
